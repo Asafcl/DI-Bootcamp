@@ -57,14 +57,14 @@ console.log(newString);
 
 
 // example
-// let firstWord = "Hello";
-// let secondWord = "World";
+let firstWord = "Hello";
+let secondWord = "World";
 
-// let changeword = firstWord.slice(0,2);
+let changeword = firstWord.slice(0,2);
 
-//     firstWord = (secondWord.slice(0,2) + firstWord.slice(2,5));
-//     secondWord= changeword + secondWord.slice(2,5);
-//     console.log(`${firstWord} ${secondWord}`);
+    firstWord = (secondWord.slice(0,2) + firstWord.slice(2,5));
+    secondWord= changeword + secondWord.slice(2,5);
+    console.log(`${firstWord} ${secondWord}`);
 // ver la sentencia .replace
 
 
