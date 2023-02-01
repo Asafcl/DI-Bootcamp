@@ -19,7 +19,6 @@ console.log (` I eat ${favoriteFood} at every ${favoriteMeal}`);
 
 
 
-
   
 
 // part I

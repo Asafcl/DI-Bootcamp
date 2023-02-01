@@ -7,6 +7,13 @@
 // EXERCISE 2
 
 let sentence = ["my","favorite","color","is","blue"];
+
+// console.log(sentence.toString());
+// console.log(sentence.join());
+// console.log(sentence.join(' '));
+
+console.log(`${sentence[0]} ${sentence[1]} ${sentence[2]} ${sentence[3]} ${sentence[4]} `);
+sentence = (`${sentence[0]} ${sentence[1]} ${sentence[2]} ${sentence[3]} ${sentence[4]} `);
 console.log(sentence);
 
 // 
@@ -23,7 +30,6 @@ let changeLet = str1.slice(0,2) + str2.slice(2,3);
 str1 = str2.slice(0,2) + str1.slice(2,3);
 str2 = changeLet;
 
-
 // 3. Create a third variable where the value is the concatenation of the two strings from the part 1 (separated by a space).
 let newString = (`${str1} ${str2}`)
 
@@ -36,7 +42,8 @@ console.log(newString)
 // Make a Calculator. Follow the instructions:
 
 // 1. Prompt the user for the first number.
-
+let num1 = prompt("ingrese numero");
+console.log(num1);
 // 2. Store the first number in a variable called num1.
 
 // Hint : console.log the type of the variable num1. What should you do to convert it to a number ?
