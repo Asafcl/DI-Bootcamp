@@ -20,13 +20,17 @@ true != true  //false, true isnt different from true
 // Console.log the sum of the numbers.
 // Hint: use some string methods
 
+
 let numbers123 = prompt("ingrese numeros separados por coma( , )");
+let sum = reduce(numbers123);
+// if(numbers123.length!=NaN){
+//     for (let i; i<numbers123.length && numbers123 !=',';i++){
+//         let num=numbers123[i];
+//     }
 
-if(numbers123.length!=NaN && numbers123=='number'){
 
-
-}
-
+// }
+console.log(num);
 console.log(numbers123);
 
 
