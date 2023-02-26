@@ -144,8 +144,8 @@ const family ={
 };
 
 for (const key in family){
-    console.log('key: ', key);
-    console.log('value: ', family[key]);
+    console.log(`key: ${key}, value: ${family[key]}`);
+    
 }
 
 
@@ -180,7 +180,9 @@ let secret = '';
 
 let x = names.sort();
 for (let i in x){
-    secret = secret + x[i][0];
+    secret += x[i][0];
 }
 
 console.log(secret);
+
+
