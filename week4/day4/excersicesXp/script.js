@@ -127,3 +127,151 @@ function calculateSum(arr) {
     return sum
 }
 changeEnough(4.25, [25, 20, 5, 0]);
+
+
+
+
+// exercise 6
+
+function hotelCost(){
+    let answer
+
+    while (!isOnlyNumbers(answer)) {
+        answer = prompt ('How many nights would you like to stay')
+    }
+    const numberOfNights = Number(answer);
+    const costPerNight = 140;
+    const totalPrice = numberOfNights * costPerNight;
+    return totalPrice;
+}
+
+// ^ ---- Option + {
+    function isOnlyNumbers(str) {
+        const regex = new RegExp(/^[0-9]*$/);
+        return regex.test(str);
+    }
+    
+    function includesNumbers(str) {
+        const regex = new RegExp(/\d/);
+        return regex.test(str);
+    }
+    // // The [0-9] expression is used to find any character between the brackets. 
+// // The digits inside the brackets can be any numbers or span of numbers from 0 to 9. 
+// // Tip: Use the [^0-9] expression to find any character that is NOT a digit.
+
+// // test. The test() method tests for a match in a string.
+// // If it finds a match, it returns true, otherwise it returns false.
+
+function planeRideCost(){
+    let destination = "";
+    while(destination == ""  || includesNumbers(destination)){
+        destination = prompt("where are you going")
+    }
+    console.log("your destination is: ", destination)
+    if (destination === "London") return 183
+    if (destination === "Paris") return  220
+    return 300;
+}
+
+function rentalCarCost(){
+    let answer
+
+    while(!isOnlyNumbers(answer)){
+        answer = prompt ("how many days would do you like a rent the car")
+    }
+    const dailyPrice = 40;
+    const numberOfDays = Number(answer)
+
+    let discount = 0
+    if (numberOfDays >= 10) discount = 0.85
+
+    const totalPrice =dailyPrice * numberOfDays *(1 - discount)
+    return totalPrice
+}
+
+function totalVacationCost (){
+    const carPrice = rentalCarCost()
+    const hotelPrice = hotelCost()
+    const PlanePrice = planeRideCost()
+    console.log ("hotelPrice: ", hotelPrice)
+    console.log ("car-Price ", carPrice)
+    console.log ("planePrice: ", PlanePrice)
+    
+    
+    const totalPrice = carPrice + hotelPrice + PlanePrice
+    console.log ("total Price: ", totalPrice)
+}
+totalVacationCost()
+
+// bonus of the exercise 6
+
+// function hotelCost(numberOfNights){
+
+//     const costPerNight = 140
+//     const totalPrice = Number(numberOfNights) * costPerNight
+//     return totalPrice
+// }
+//  // ^ ---- Option + {
+// function isOnlyNumbers(str) {
+//     const regex = new RegExp(/^[0-9]*$/)
+//     return regex.test(str)
+// }
+
+// function includesNumbers(str) {
+//     const regex = new RegExp(/\d/)
+//     return regex.test(str)
+// }
+
+
+// function planeRideCost(destination) {
+//     console.log("your destination is", destination)
+//     if (destination === "London") return 183
+//     if (destination === "Paris") return 220
+//     return 300
+// }
+
+
+
+// function rentalCarCost(carAnswer) {
+
+// const dailyPrice = 40;
+// const numberOfDays = Number(carAnswer)
+
+// let discount = 0
+// if (numberOfDays >= 10) discount = 0.05
+
+// const totalPrice = dailyPrice * numberOfDays * (1 - discount)
+// return totalPrice 
+// }
+
+
+
+// function totalVacationCost() {
+//     let hotelAnswer
+//     let carAnswer
+//     let destination = ""
+
+//     while (!isOnlyNumbers(hotelAnswer)) {
+//         hotelAnswer = prompt("How many nights would you like to stay?")
+//     }
+ 
+//     while (!isOnlyNumbers(carAnswer)) {
+//         carAnswer = prompt("How many days would you like to rent the car?")
+//     }
+
+//     while (destination == "" || includesNumbers(destination)){
+//         destination = prompt("Where are you going ?")
+//     }
+
+//     const carPrice = rentalCarCost(carAnswer)
+//     const hotelPrice = hotelCost(hotelAnswer)
+//     const planePrice = planeRideCost(destination)
+
+//     console.log("hotelPrice: ", hotelPrice)
+//     console.log("carPrice: ", carPrice)
+//     console.log("planePrice: ", planePrice)
+
+//     const totalPrice = carPrice + hotelPrice + planePrice
+//     console.log("total Price: ", totalPrice)
+// }
+// totalVacationCost()
