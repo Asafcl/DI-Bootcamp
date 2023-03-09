@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+<!-- exercice 1 -->
+<style>
+
+#mi-elemento {
+  opacity: 1;
+  transition: opacity 2s ease-in-out;
+}
+
+.ocultar {
+  opacity: 0;
+}
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+    
+    
+    <article>
+        <h1>Some Facts</h1>
+        <h2>The Chocolate</h2>
+        <h3>History of the chocolate</h3>
+        <p>Chocolate is made from tropical Theobroma cacao tree seeds. Its earliest use dates back to the Olmec civilization in Mesoamerica.</p>
+        <p>After the European discovery of the Americas, chocolate became very popular in the wider world, and its demand exploded.</p>
+        <p>Chocolate has since become a popular food product that millions enjoy every day, thanks to its unique, rich, and sweet taste.</p>
+        <p>But what effect does eating chocolate have on our health?</p> 
+        <button id="boldBtn">Bold Text</button>
+    </article>
+
+
+    <!-- <script src="script.js"></script> -->
+  <script>
+    const h1 =document.querySelector('h1')
+    console.log(h1.textContent)
+
+
+    const paragraph = document.querySelectorAll('p')
+    paragraphLast = (paragraph.length -1)
+    paragraph[paragraphLast].remove();
+
+
+    const h2 = document.querySelector('h2')
+    h2.addEventListener('click',()  => {
+        h2.style.color =('blue')
+    })
+
+    const h3 = document.querySelector('h3')
+    h3.addEventListener('click',() => {
+        h3.style.display = 'none'
+    })
+
+    const boldBtn = document.getElementById('boldBtn')
+    boldBtn.addEventListener('click',() =>{
+        paragraph.forEach(p =>{
+            p.style.fontWeight = 'bold'
+        })
+    });
+
+    // bonus 1
+    const numRandom = () => Math.floor(Math.random() * 101);
+    
+    h1.addEventListener('mouseenter',() => {
+        h1.style.fontSize = `${numRandom()}px`;
+    });
+
+
+
+// bonus 2
+    function desvanecerElemento() {
+  paragraph[1].classList.add('ocultar');
+}
+
+function restaurarElemento() {
+ paragraph[1].classList.remove('ocultar');
+}
+
+
+paragraph[1].addEventListener('mouseenter', () => {
+  desvanecerElemento();  
+});
+
+
+    
+  </script>
+</body>
+</html>

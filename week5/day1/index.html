@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="script.js"></script>
+
+  <div >Users:</div>
+  <ul>
+    <li>John</li>
+    <li>Pete</li>
+  </ul>
+
+  <h1>Welcome</h1>
+  <p class="demo">This is the welcome message.</p>
+  <h2>Technology</h2>
+  <p id="second" class="demo">This is the technology section.</p>
+
+  <script>
+    let paragraphs = document.getElementsByTagName("p");
+    let paragraphs2 = document.querySelectorAll(".demo");
+    document.getElementById("second").innerHTML = "The orginal message is changed.";
+    document.getElementById("second").style.color = 'red'
+
+    paragraphs2.forEach(arr => {
+      arr.style.border = '1px solid green';
+      arr.style.color = 'red';
+    });
+  </script>
+
+   <!-- ejercicio1 -->
+  
+  
+  <!-- <script>
+    document.getElementsByTagName('div')[0]
+    document.querySelector('div').textContent = 'usuarios:'
+
+    document.getElementsByTagName('ul')[0]
+    document.querySelector('ul')
+
+    document.getElementsByTagName('li')[1]
+    document.querySelector('li:nth-child(2)')
+
+  </script> -->
+
+
+
+ 
+
+
+
+    <!-- <p id="titulo">TITULO DEL DOCUMENTO</p>
+    <div>
+        <p>aqui ponemos todo el texto que queremos poner <span id="demo2"></span></p>
+    </div>
+
+    <footer id="finPagina"></footer>
+    
+
+    <script>
+        document.getElementById('demo2').innerHTML = 'hello world'
+        document.getElementById('titulo').innerHTML ='TITULO SUSTITUTO'
+        document.getElementById('finPagina').innerHTML = 'AQUI ES EL PIE DE PAGINA'
+    </script> -->
+    
+
+
+
+
+
+  
+<!-- JavaScript to add new element -->
+<!-- <h1>Hello World</h1>
+<div id="demo">
+  <p>This is some text in a paragraph.</p>
+</div> -->
+ 
+ 
+    
+<!-- <script>
+  // create a new paragraph element
+  let newPara = document.createElement('p');
+  // add text to the new paragraph element
+  let paraText = document.createTextNode('This is a new paragraph added using JavaScript!');
+  newPara.appendChild(paraText);
+  // get a reference to the container element
+  let container = document.getElementById('container');
+  // add the new paragraph element to the container
+  container.appendChild(newPara);
+</script> -->
+
+
+
+
+<!-- exercise hecho por mi junto al de arriba-->
+<!-- <script>
+    let newFooter = document.createElement('span');
+    let textoNuevo = document.createTextNode('aqui estoy creando un nodo de texto')
+    newFooter.appendChild(textoNuevo);
+    let demo = document.getElementById('demo');
+    demo.appendChild(newFooter);
+
+</script> -->
+
+
+<!-- exercise -->
+<!-- <p id="p2">Hello World!</p>
+<script>
+document.getElementById("p2").style.color = "blue";
+</script> -->
+
+
+
+<!-- exercise -->
+<!-- <ul>
+    <li>The</li>
+    <li>test</li>
+  </ul>
+  <ul>
+    <li>has</li>
+    <li>passed</li>
+  </ul>
+
+
+  <script>
+    let elements = document.querySelectorAll('ul > li:last-child');
+
+    for (let elem of elements) {
+      alert(elem.innerHTML); // "test", "passed"
+    }
+
+  </script> -->
+
+  
+</body>
+</html>

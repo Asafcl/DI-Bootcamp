@@ -103,105 +103,108 @@
 
 // exercise 5
 
-function changeEnough(itemPrice, amountOfChange) {
-    console.log("the item price is", itemPrice)
-    const sum = calculateSum(amountOfChange)
-    return (sum > itemPrice)
-}
+// function changeEnough(itemPrice, amountOfChange) {
+//     console.log("the item price is", itemPrice)
+//     const sum = calculateSum(amountOfChange)
+//     return (sum > itemPrice)
+// }
 
-function calculateSum(arr) {
-    let sum = 0
+// function calculateSum(arr) {
+//     let sum = 0
 
-    for (let i = 0; i < arr.length; i++){
-        let coinValue
-        const numberOfCoins = arr[i]
-        if (i === 0) {coinValue = 0.25}
-        if (i === 1) {coinValue = 0.10}
-        if (i === 2) {coinValue = 0.05}
-        if (i === 3) {coinValue = 0.01}
-        console.log("We have ", numberOfCoins, " coins that have a value of ", coinValue)
+//     for (let i = 0; i < arr.length; i++){
+//         let coinValue
+//         const numberOfCoins = arr[i]
+//         if (i === 0) {coinValue = 0.25}
+//         if (i === 1) {coinValue = 0.10}
+//         if (i === 2) {coinValue = 0.05}
+//         if (i === 3) {coinValue = 0.01}
+//         console.log("We have ", numberOfCoins, " coins that have a value of ", coinValue)
         
-        sum = sum + numberOfCoins * coinValue
-    }
-    console.log("you own", sum)
-    return sum
-}
-changeEnough(4.25, [25, 20, 5, 0]);
+//         sum = sum + numberOfCoins * coinValue
+//     }
+//     console.log("you own", sum)
+//     return sum
+// }
+// changeEnough(4.25, [25, 20, 5, 0]);
 
 
 
 
-// exercise 6
+// // exercise 6
 
-function hotelCost(){
-    let answer
+// function hotelCost(){
+//     let answer
 
-    while (!isOnlyNumbers(answer)) {
-        answer = prompt ('How many nights would you like to stay')
-    }
-    const numberOfNights = Number(answer);
-    const costPerNight = 140;
-    const totalPrice = numberOfNights * costPerNight;
-    return totalPrice;
-}
+//     while (!isOnlyNumbers(answer)) {
+//         answer = prompt ('How many nights would you like to stay')
+//     }
+//     const numberOfNights = Number(answer);
+//     const costPerNight = 140;
+//     const totalPrice = numberOfNights * costPerNight;
+//     return totalPrice;
+// }
 
-// ^ ---- Option + {
-    function isOnlyNumbers(str) {
-        const regex = new RegExp(/^[0-9]*$/);
-        return regex.test(str);
-    }
+// // ^ ---- Option + {
+//     function isOnlyNumbers(str) {
+//         const regex = new RegExp(/^[0-9]*$/);
+//         return regex.test(str);
+//     }
     
-    function includesNumbers(str) {
-        const regex = new RegExp(/\d/);
-        return regex.test(str);
-    }
-    // // The [0-9] expression is used to find any character between the brackets. 
-// // The digits inside the brackets can be any numbers or span of numbers from 0 to 9. 
-// // Tip: Use the [^0-9] expression to find any character that is NOT a digit.
+//     function includesNumbers(str) {
+//         const regex = new RegExp(/\d/);
+//         return regex.test(str);
+//     }
+//     // // The [0-9] expression is used to find any character between the brackets. 
+// // // The digits inside the brackets can be any numbers or span of numbers from 0 to 9. 
+// // // Tip: Use the [^0-9] expression to find any character that is NOT a digit.
 
-// // test. The test() method tests for a match in a string.
-// // If it finds a match, it returns true, otherwise it returns false.
+// // // test. The test() method tests for a match in a string.
+// // // If it finds a match, it returns true, otherwise it returns false.
 
-function planeRideCost(){
-    let destination = "";
-    while(destination == ""  || includesNumbers(destination)){
-        destination = prompt("where are you going")
-    }
-    console.log("your destination is: ", destination)
-    if (destination === "London") return 183
-    if (destination === "Paris") return  220
-    return 300;
-}
+// function planeRideCost(){
+//     let destination = "";
+//     while(destination == ""  || includesNumbers(destination)){
+//         destination = prompt("where are you going")
+//     }
+//     console.log("your destination is: ", destination)
+//     if (destination === "London") return 183
+//     if (destination === "Paris") return  220
+//     return 300;
+// }
 
-function rentalCarCost(){
-    let answer
+// function rentalCarCost(){
+//     let answer
 
-    while(!isOnlyNumbers(answer)){
-        answer = prompt ("how many days would do you like a rent the car")
-    }
-    const dailyPrice = 40;
-    const numberOfDays = Number(answer)
+//     while(!isOnlyNumbers(answer)){
+//         answer = prompt ("how many days would do you like a rent the car")
+//     }
+//     const dailyPrice = 40;
+//     const numberOfDays = Number(answer)
 
-    let discount = 0
-    if (numberOfDays >= 10) discount = 0.85
+//     let discount = 0
+//     if (numberOfDays >= 10) discount = 0.85
 
-    const totalPrice =dailyPrice * numberOfDays *(1 - discount)
-    return totalPrice
-}
+//     const totalPrice =dailyPrice * numberOfDays *(1 - discount)
+//     return totalPrice
+// }
 
-function totalVacationCost (){
-    const carPrice = rentalCarCost()
-    const hotelPrice = hotelCost()
-    const PlanePrice = planeRideCost()
-    console.log ("hotelPrice: ", hotelPrice)
-    console.log ("car-Price ", carPrice)
-    console.log ("planePrice: ", PlanePrice)
+// function totalVacationCost (){
+//     const carPrice = rentalCarCost()
+//     const hotelPrice = hotelCost()
+//     const PlanePrice = planeRideCost()
+//     console.log ("hotelPrice: ", hotelPrice)
+//     console.log ("car-Price ", carPrice)
+//     console.log ("planePrice: ", PlanePrice)
     
     
-    const totalPrice = carPrice + hotelPrice + PlanePrice
-    console.log ("total Price: ", totalPrice)
-}
-totalVacationCost()
+//     const totalPrice = carPrice + hotelPrice + PlanePrice
+//     console.log ("total Price: ", totalPrice)
+// }
+// totalVacationCost()
+
+
+
 
 // bonus of the exercise 6
 
@@ -275,3 +278,61 @@ totalVacationCost()
 //     console.log("total Price: ", totalPrice)
 // }
 // totalVacationCost()
+
+
+// mejorado exercise 6, no se pidio
+
+function calculateCost(event) {
+    event.preventDefault();
+
+    const hotelNights = document.querySelector('#hotelNights').value;
+    const carDays = document.querySelector('#carDays').value;
+    const destination = document.querySelector('#destination').value;
+    const resultDiv = document.querySelector('#result');
+
+    if (!isOnlyNumbers(hotelNights) || !isOnlyNumbers(carDays)) {
+      resultDiv.innerHTML = 'Please enter only numbers for the number of hotel nights and car rental days.';
+      return;
+    }
+
+    if (destination === '') {
+      resultDiv.innerHTML = 'Please select a destination.';
+      return;
+    }
+
+    const carPrice = rentalCarCost(carDays);
+    const hotelPrice = hotelCost(hotelNights);
+    const planePrice = planeRideCost(destination);
+
+    const totalPrice = carPrice + hotelPrice + planePrice;
+
+    resultDiv.innerHTML = `The total cost of your vacation is $${totalPrice}.`;
+  }
+
+  function hotelCost(numberOfNights) {
+    const costPerNight = 140;
+    const totalPrice = Number(numberOfNights) * costPerNight;
+    return totalPrice;
+  }
+
+  function isOnlyNumbers(str) {
+    const regex = new RegExp(/^[0-9]*$/);
+    return regex.test(str);
+  }
+
+  function planeRideCost(destination) {
+    if (destination === 'London') return 183;
+    if (destination === 'Paris') return 220;
+    return 300;
+  }
+
+  function rentalCarCost(carDays) {
+    const dailyPrice = 40;
+    const numberOfDays = Number(carDays);
+
+    let discount = 0;
+    if (numberOfDays >= 10) discount = 0.05;
+
+    const totalPrice = dailyPrice * numberOfDays * (1 - discount);
+    return totalPrice;
+  }
