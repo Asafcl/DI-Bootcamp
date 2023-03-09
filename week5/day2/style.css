@@ -1,0 +1,25 @@
+/* exercise 2 */
+/* body{
+    font-size: 24px;
+}
+
+div{
+    background-color: rgb(173,216,230);
+    padding: 2rem;
+}
+li:first-child{
+    display: none;
+}
+li:last-child{
+    border: 1px solid red;
+} */
+
+/* exercise 4 */
+
+img{
+    width: 100px;
+}
+
+.is-read{
+    color: red;
+}
