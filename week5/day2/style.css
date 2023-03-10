@@ -1,5 +1,5 @@
 /* exercise 2 */
-/* body{
+body{
     font-size: 24px;
 }
 
@@ -12,14 +12,14 @@ li:first-child{
 }
 li:last-child{
     border: 1px solid red;
-} */
+}
 
 /* exercise 4 */
 
-img{
+/* img{
     width: 100px;
 }
 
 .is-read{
     color: red;
-}
+} */
