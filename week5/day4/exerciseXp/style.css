@@ -1,0 +1,33 @@
+/* exercise 4 */
+/* body {
+    padding-top:30px;
+} 
+
+label,input {
+    display:block;
+}   */
+
+/* exercise 5 */
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #3e8e41;
+    color: white;
+    font-size: 20px;
+    top: -5px;
+    left: 5px;
+}
+
