@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM ANIMATIONS</title>
+     <style>
+         /* GREEN EX 1 - 2  */
+		 #sales-banner {
+			display: none;
+			background-color: #f44336;
+			color: white;
+			padding: 10px;
+			text-align: center;
+			font-size: 24px;
+		}
+	</style>
+
+
+
+    <style>
+        /* DOM ANIMATIONS XP 1 */
+        p {
+          background: yellow;
+          color: red;
+        }
+        </style>
+
+        <style>
+            /* DOM ANIMATION EXERCISE XP 2 MOVE THE BOX */
+            #container {
+
+              width: 400px;
+              height: 400px;
+              position: relative;
+              background: yellow;
+            }
+            #animate {
+              width: 50px;
+              height: 50px;
+              position: absolute;
+              background-color: red;
+
+
+
+            }
+            #screenSaver{
+             display: none;
+            }
+
+            </style>
+
+            <style>
+                /* DOM ANIMATION EXERCISE XP 3 DRAG AND DROP */
+                #target {
+                  width: 200px;
+                  height: 200px;
+                  position: relative;
+                  background: yellow;
+                }
+                #box {
+                  width: 50px;
+                  height: 50px;
+                  position: absolute;
+                  background-color: red;
+                }
+                </style>
+</head>
+<body>
+
+
+
+    <!-- <div id="sales-banner">The sales end in 10 min!</div>
+
+	<script>
+		// Wait for 2 seconds before showing the banner (GREEN EX 1)
+    let x =2000;
+		setTimeout(function() {
+			document.getElementById("sales-banner").style.display = "block";
+		}, x);
+    setTimeout(function(){ document.getElementById('sales-banner').style.display = 'none';
+  },x+x)
+        // Here, we have created a div with an ID of "sales-banner"
+        // and styled it using CSS. We have set the display property to "none" to
+        // initially hide the banner.Then, in the JavaScript code, we use the setTimeout() function to wait
+        // for 2 seconds before changing the display property to "block", which
+        // makes the banner visible to the user.
+	</script> -->
+
+
+
+
+<!-- <script>
+    // Set the duration of the countdown in seconds (GREEN EX 2)
+    let duration = 10;
+
+    // Wait for 5 seconds before showing the banner
+    setTimeout(function() {
+        document.getElementById("sales-banner").style.display = "block";
+        countdown();
+    }, 5000);
+
+    // Function to update the countdown in the banner
+    function countdown() {
+        let banner = document.getElementById("sales-banner");
+        if (duration > 0) {
+            banner.innerHTML = "The sales end in " + duration + " sec!";
+            duration--;
+            setTimeout(countdown, 1000);
+        } else {
+            banner.innerHTML = "The sales have ended!";
+        }
+    }
+</script> -->
+
+    <!-- 🌟 Exercise 1: Timer (DOM ANIMATIONS XP 1 add CSS)
+Instructions
+Using this HTML code:
+
+Part I
+In your Javascript file, using setTimeout, call a function after 2 seconds.
+The function will alert “Hello World”.
+
+
+Part II
+In your Javascript file, using setTimeout, call a function after 2 seconds.
+The function will add a new paragraph <p>Hello World</p> to the <div id="container">.
+
+
+Part III
+In your Javascript file, using setInterval, call a function every 2 seconds.
+The function will add a new paragraph <p>Hello World</p> to the <div id="container">.
+The interval will be cleared (ie. clearInterval), when the user will click on the
+button.
+Instead of clicking on the button, the interval will be cleared (ie. clearInterval)
+as soon as there will be 5 paragraphs inside the <div id="container">. -->
+
+
+    <!-- <div id="container"></div>
+    <button id="clear">Clear Interval</button> -->
+
+
+    <!-- <script>
+// Part I: To call a function after 2 seconds and alert "Hello World",
+// we can use the setTimeout() function.
+
+
+setTimeout(function() {
+  alert("Hello World");
+}, 2000);
+
+
+// Part II:
+// To add a new paragraph with the text "Hello World" to the div element
+// with ID "container" after 2 seconds, we can again use the setTimeout() function.
+
+// setTimeout(function() {
+//   let container = document.getElementById("container");
+//   let newParagraph = document.createElement("p");
+//   newParagraph.innerText = "Hello World";
+//   container.appendChild(newParagraph);
+// }, 4000);
+
+
+
+
+
+// Part III:
+// To add a new paragraph with the text "Hello World" to the div element
+// with ID "container" every 2 seconds using setInterval().
+
+let intervalId = setInterval(function() {
+  let container = document.getElementById("container");
+  let newParagraph = document.createElement("p");
+  newParagraph.innerText = "Hello World " + container.childElementCount;
+  container.appendChild(newParagraph);
+
+  if (container.childElementCount === 5) {
+    clearInterval(intervalId);
+    container.remove()
+  }
+}, 2000);
+
+// This will add a new paragraph with the text "Hello World"
+// to the div element with ID "container" every 2 seconds.
+// It will also check if there are 5 child elements in the container,
+// and if so, it will clear the interval using clearInterval() and stop
+// adding new paragraphs.
+
+// To clear the interval using the button with ID "clear", we can
+// add the following code:
+
+document.getElementById("clear").addEventListener("click", function() {
+  clearInterval(intervalId);
+  container.remove()
+});
+
+// This will add a click event listener to the button that
+// clears the interval when clicked.
+    </script> -->
+
+
+
+
+    <!-- 🌟 Exercise XP 2 : Move The Box (add CSS)
+    Instructions
+
+    Copy the code above, to a structured HTML file.
+    In your Javascript file, use setInterval to move the <div id="animate">
+    to the right side of the <div id="container">, when the button is clicked on.
+    The <div id="animate"> should move 1px to the right every milisecond, until
+    it reaches the end of the <div id="container">.
+    Hint : use clearInterval as soon as the box reaches the right end side of the
+    container.
+    Hint : check out the demonstration in the Course Noted named JS Functions -->
+
+    <!-- <p><button onclick="myMove()">Click Me</button></p>
+    <div id="container">
+      <div id="animate"> </div>
+    </div>
+
+<script>
+    function myMove() {
+  let elem = document.getElementById("animate");
+  let container = document.getElementById("container");
+  let pos = 0;
+  let id = setInterval(frame, 1);
+
+  function frame() {
+    if (pos === container.offsetWidth - elem.offsetWidth) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.left = pos + 'px';
+    }
+  }
+}
+//The offsetWidth property returns the viewable width of an element (in pixels)
+//including padding, border and scrollbar, but not the margin.
+// container.offsetWidth - elem.offsetWidth is an expression that calculates
+// the maximum horizontal position that the elem element can reach inside the
+// container element without overflowing its boundaries.
+
+// The offsetWidth property is used to get the width of an element including its padding,
+// border, and scrollbar (if any). In this case, container.offsetWidth is the width
+// of the container element, and elem.offsetWidth is the width of the animate element.
+
+// So, container.offsetWidth - elem.offsetWidth calculates the maximum amount of
+// space that the elem element can move to the right inside the container element
+// without overflowing its boundaries.
+
+// Script code to move the div element with ID "animate"
+// to the right side of the div element with ID "container" using setInterval():
+// This code sets the left style property of the div element with ID "animate"
+// to move it to the right of the div element with ID "container".
+// It uses setInterval() to call the frame function every millisecond
+// to move the div element to the right until it reaches the end of the container.
+// It also checks if the div element has reached the end of the container and
+// clears the interval using clearInterval() if so.
+
+</script> -->
+
+
+
+<!-- EXTRA EXERCISE XP 2 (Move Left / Down)-->
+
+<!-- <p><button onclick="myMove()">Click Me</button></p>
+<div id="container">
+  <div id="animate"></div>
+</div>
+
+<script>
+  function myMove() {
+    let elem = document.getElementById("animate");
+    let container = document.getElementById("container");
+    let pos = 0;
+    let posY = 0;
+    let id = setInterval(frame, 1);
+
+    function frame() {
+      if (pos === container.offsetWidth - elem.offsetWidth && posY === container.offsetHeight - elem.offsetHeight) {
+        clearInterval(id);
+      } else {
+        if (pos < container.offsetWidth - elem.offsetWidth) {
+          pos++;
+        }
+        if (posY < container.offsetHeight - elem.offsetHeight) {
+          posY++;
+        }
+        elem.style.left = pos + 'px';
+        elem.style.top = posY + 'px';
+      }
+    }
+  }
+</script> -->
+
+
+<!-- EXTRA EXERCISE XP 2 (Keep moving Randomly)-->
+
+
+<!-- <div id="screenSaver">
+
+<p>
+  <button onclick="myMove()">Start</button>
+  <button onclick="stopMove()">Stop</button>
+</p>
+<div id="container">
+  <div id="animate">
+  <img src="pajaro.jpg" width="30px" height="30px">
+</div>
+</div>
+</div>
+
+<script>
+
+setTimeout(function() {
+    document.getElementById("screenSaver").style.display = "block";
+
+}, 2000);
+
+  let intervalID;
+
+  function myMove() {
+    let elem = document.getElementById("animate");
+    let container = document.getElementById("container");
+    let pos = Math.floor(Math.random() * (container.offsetWidth - elem.offsetWidth));
+    let posY = Math.floor(Math.random() * (container.offsetHeight - elem.offsetHeight));
+    let dx = (Math.random() - 0.5) * 2; // Random horizontal direction
+    let dy = (Math.random() - 0.5) * 2; // Random vertical direction
+
+    function frame() {
+      if (pos <= 0 || pos >= container.offsetWidth - elem.offsetWidth) {
+        dx = -dx; // Reverse horizontal direction if box hits container boundary
+        elem.style.backgroundColor = getRandomColor();
+      }
+      if (posY <= 0 || posY >= container.offsetHeight - elem.offsetHeight) {
+        dy = -dy; // Reverse vertical direction if box hits container boundary
+        elem.style.backgroundColor = getRandomColor();
+      }
+      pos += dx;
+      posY += dy;
+      elem.style.left = pos + 'px';
+      elem.style.top = posY + 'px';
+    }
+    intervalID = setInterval(frame, 10);
+  }
+
+  function stopMove() {
+    clearInterval(intervalID);
+  }
+
+  function getRandomColor() {
+      let letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+      }
+    return color;
+    }
+
+// The getRandomColor() function generates a random color using hexadecimal characters.
+// First, the function initializes a string called letters that contains all the possible
+// hexadecimal digits.
+// Next, it initializes a string called color with a hash symbol (#), which is a standard
+// prefix used for defining hexadecimal color codes in HTML and CSS.
+// Then, the function enters a loop that iterates 6 times, which is the number of digits
+// needed for a valid hexadecimal color code.
+// Within the loop, the function generates a random integer between 0 and 15 using
+// Math.random() and Math.floor(). This integer is used to select a random character
+// from the letters string.
+// Finally, the selected character is appended to the color string, and the loop repeats
+// until all 6 digits are generated.
+// The function then returns the resulting color string, which represents a random color
+// in hexadecimal format.
+
+
+  // BONUS: ADD <img id="animate" src="rock.png"> instead of div or inside
+</script>
+  <!-- // HOMEWORK -- ADD STOP BUTTON , CHANGE COLOR (ADD RANDOM CHANGE COLOR)
+
+  // if (pos <= 0 || pos >= container.offsetWidth - elem.offsetWidth) {
+  //   dx = -dx; // Reverse horizontal direction if box hits container boundary
+  // }
+  // This code checks if the position of the box in the horizontal
+  // direction (left to right) is less than or equal to 0 or greater
+  // than or equal to the maximum available space in the container minus
+  // the width of the box. If the box is at either edge of the container,
+  // it means it has hit a boundary and needs to reverse its direction.
+  // The code then reverses the horizontal direction of the box by changing the
+  // sign of the dx variable, causing the box to move in the opposite direction in
+  // the next frame of the animation.
+
+
+// Math.random() returns a random floating-point number between 0 (inclusive)
+// and 1 (exclusive).
+// (container.offsetWidth - elem.offsetWidth) calculates the maximum horizontal
+// distance that the animated element can travel inside the container.
+// This is calculated by subtracting the width of the element from the width of
+// the container. This ensures that the element will not move outside of the container
+// boundaries.
+// Math.floor() rounds down the resulting value to a whole number. This ensures
+// that the position of the animated element will always be an integer.
+// Multiplying the above values gives a random value between 0 (inclusive) and the
+// maximum horizontal distance that the animated element can travel inside the container
+// (exclusive).
+// The resulting random value is assigned to pos, which represents the starting
+// horizontal position of the animated element.
+</script>  -->
+
+
+<!-- exercise 3 -->
+
+
+          <style>
+               #target {
+                 width: 200px;
+                 height: 200px;
+                 position: relative;
+                 background: yellow;
+               }
+               #box {
+                 width: 50px;
+                 height: 50px;
+                 position: absolute;
+                 background-color: red;
+               }
+               </style>
+
+<div id="target"></div>
+<br>
+<!-- The box element is selected using document.getElementById('box'). -->
+<div id="box"></div>
+
+<script>
+
+   let box = document.getElementById('box');
+
+// An event listener is added to the box element for the mousedown event.
+box.addEventListener('mousedown', function(e) {
+  //When the mousedown event is triggered, the default behavior is prevented using e.preventDefault().
+ e.preventDefault();
+ //The shiftX and shiftY variables are set to the difference between the clientX/clientY
+  let shiftX = e.clientX - box.getBoundingClientRect().left;
+ let shiftY = e.clientY - box.getBoundingClientRect().top;
+//  coordinates of the mouse click and the left/top coordinates of the box element relative to the viewport,
+// respectively. This is done to ensure that the mouse cursor stays in the same position relative to the box
+// element when it is dragged.
+ moveAt(e.pageX, e.pageY);
+
+ function moveAt(pageX, pageY) {
+   box.style.left = pageX - shiftX + 'px';
+   box.style.top = pageY - shiftY + 'px';
+ }
+//  The moveAt() function is called with the pageX and pageY coordinates of the mouse click, which are passed
+// to the function by the mousedown event.
+//  The moveAt() function sets the left and top CSS properties of the box element to the difference
+// between the pageX/pageY coordinates of the mouse click and the shiftX/shiftY variables, respectively.
+ function onMouseMove(e) {
+   moveAt(e.pageX, e.pageY);
+ }
+//  The onmouseup event is attached to the box element. When the box element is released, the mousemove
+// event listener is removed using document.removeEventListener('mousemove', onMouseMove), and the
+// onmouseup event is set to null to prevent further mouseup events from being triggered.
+ document.addEventListener('mousemove', onMouseMove);
+
+//  The onMouseMove() function is called when the mousemove event is triggered on the document.
+// It calls moveAt() with the pageX and pageY coordinates of the mouse pointer. This ensures that the box
+// element follows the mouse cursor when it is dragged.
+ box.onmouseup = function() {
+   document.removeEventListener('mousemove', onMouseMove);
+   box.onmouseup = null;
+  //  This is done to move the box element to the position of the mouse cursor.
+  // The isInside() function is called with the box and target elements as arguments. It checks whether the
+// box element is completely inside the target element by comparing their respective left, right, top,
+// and bottom coordinates using the getBoundingClientRect() method. If the box element is inside the
+// target element, an alert is triggered.
+   if (isInside(box, target)) {
+     alert('Dropped in target!');
+   }
+ };
+});
+
+function isInside(box, target) {
+ let boxRect = box.getBoundingClientRect();
+ let targetRect = target.getBoundingClientRect();
+
+ return boxRect.left > targetRect.left &&
+        boxRect.right < targetRect.right &&
+        boxRect.top > targetRect.top &&
+        boxRect.bottom < targetRect.bottom;
+}
+</script>
