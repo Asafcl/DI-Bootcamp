@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- exercise 2-2 -->
+    <!-- <style>
+        #operatord{
+            width: 60px;
+
+        }
+        #divCalculator{
+            display: flex;
+            flex-direction: column;
+            border: 3px solid black;
+            height: 300px;
+            width: 300px;
+            margin-left: 500px;
+            margin-top: 100px ;
+            background-color: rgb(53, 9, 9);
+
+        }
+        #calcular{
+            width: 50px;
+            align-items: center;
+            justify-items: center;
+            margin-left: 120px;
+            margin-top: 40px;
+        }
+        #oneNumber{
+            border: 2px solid black;
+            width: 150px;
+            margin-left: 80px;
+            text-align: center;
+        }
+        #twoNumber{
+            border: 2px solid black;
+            width: 150px;
+            margin-left: 80px;
+            text-align: center;
+        }
+        #operatord{
+            border: 2px solid black;
+            width: 50px;
+            margin-left: 120px;
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+        }
+
+        #demo{
+            margin-left: 80px;
+            font-size: 60px;
+            margin-right: 60px;
+            background-color: gray;
+            color: white;
+            text-align: center;
+        }
+
+    </style> -->
+    
+    <!-- EXERCISE 2-2 -->
+    
+    <!-- <div id="divCalculator">
+    <input type="number" id="oneNumber" name="oneNumber" placeholder="Enter a Number"><br>
+    <input type="number" id="twoNumber" placeholder="Enter a Second Number">
+    <input type="text" id="operatord" placeholder="Enter a Operator"> 
+    
+    <button onclick="calcular()" id="calcular">check</button>
+    <p id="demo"></p>
+</div> -->
+    <!-- part2 -->
+    <!-- <input type="text" id="yearInput" placeholder="Enter a Year">
+    <button onclick="checkYear()">check Year</button> -->
+   
+    <script>
+        // exercise1
+    //     var myarray = [1, 3, 5, 2, 4];
+    // var check = myarray.includes(2);
+    // console.log(check);
+
+// exercise 2
+//     var myarray = [1, 3, 5, 2, 4];
+// var check = myarray.includes(3,1); 
+// if (check==true)
+// console.log("Found");
+// else 
+// {
+//   console.log("Not found"); 
+// }
+
+// exercise 3
+// function checkYear(year){
+//     if (year > 2000){
+//         var x = document.getElementById('demo')
+//         x.textContent = 'you are in the 21st'
+//         console.log('you are in the 21st')
+//     }else{
+//         console.log('you live in the middle age')
+//     }
+// }
+// checkYear(1985);
+// checkYear(2022);
+
+
+// part2
+// function checkYear(){
+//     const year = document.getElementById('yearInput').value;
+//     const message = year > 2000 ? 'you are in the 21st century' : 'you live in the middle'
+//     document.getElementById('demo').textContent = message   
+// }
+
+// exercise 2-2
+// const calculator = (num1,num2,operator)=>{
+//     const result = operator ==='+' ? num1 + num2 :
+//                     operator ==='-' ? num1 - num2 :
+//                     operator ==='*' ? num1 * num2 :
+//                     operator ==='/' ? num1 / num2 :
+//                     'invalid operator';
+//                     return result;
+// }
+
+// const calcular = () => {
+//     const num1 = document.getElementById('oneNumber').value;
+//     const num2 = document.getElementById('twoNumber').value;
+//     const operator = document.getElementById('operatord').value;
+// const result = calculator(num1,num2, operator);
+// document.getElementById('demo').textContent = result
+// }
+
+
+
+
+// console.log(calculator(5,7,"+"));
+// console.log(calculator(10,3,"-"));
+// console.log(calculator(4,6,"*"));
+// console.log(calculator(2,4,"/"));
+
+
+// exercise array methods 1
+
+// const numbers = [10,11,12,15,20];
+
+// numbers.forEach((number, i, arr) => { 
+//      if (arr[i] % 2 === 0)
+//      console.log(arr[i]) 
+// }); 
+
+//        or
+
+// numbers.forEach((number) => { 
+//      if (number % 2 === 0)
+//      console.log(number) 
+// }); 
+
+// exercise array methods 2
+
+ const words = ["wow","hey","bye"];
+
+//  const encontrar = words.some(word => word.startsWith('h'))
+// if (encontrar)
+//     console.log('si hay')
+//     else
+//     console.log('no hay')
+
+    // or
+
+    // const hasWord = words.some((word) =>{
+    //     return word.startsWith('h');
+    // });
+
+    // console.log (hasWord);
+
+
+// exercise array methods 3
+
+// const words = ["hello","hey","hola"];
+
+// if (words.every(value => value.startsWith('h'))){
+//     console.log('ok')
+// }else
+// console.log('no ok')
+</script>
+
+<!-- <label for="words-input">Enter words:</label>
+<input type="text" id="words-input">
+<button onclick="checkWords()">Check words</button>
+<p id="result"></p> -->
+
+
+<script>
+// function checkWords() {
+//   const wordsInput = document.getElementById("words-input");
+//   const words = wordsInput.value.split(",").map((word) => word.trim());
+//   const result = document.getElementById("result");
+//   const hasWordStartingWithH = words.some((word) => {
+//     return word.startsWith("h");
+//   });
+//   result.textContent = hasWordStartingWithH ? "At least one word starts with 'h'" : "No word starts with 'h'";
+// }
+
+
+    </script>
+
+    <!-- PADSTART METHOD -->
+<!-- <script>
+    const number ="123";
+    const paddedNumber = number.padStart(5,"0");
+    console.log(paddedNumber);
+</script> -->
+
+<!-- <script>
+    const number ="123";
+    const paddedNumber = number.padStart(5,"45");
+    console.log(paddedNumber); //45123
+</script> -->
+
+<!-- <script>
+    const text = "hello";
+    const paddedText = text.padEnd(8, '!');
+    console.log(paddedText);//"hello!!!" completa 8 caracteres completandolo con exclamacion
+
+</script> -->
+
+<!-- <script>
+    let arr = ["blue",["red","yellow"],"green"];
+    let flattened = arr.flat();
+    console.log(flattened)
+</script> -->
+
+<!-- <script>
+    let arr = ["blue",["red",["a","b"],"yellow"],"green"];
+    let flattened = arr.flat();
+    console.log(flattened)//["blue",["a","b"],"green"]; //va a poner a y b como array de red
+</script> -->
+
+<!-- <script>
+    let arr = ["blue",["red",["a","b"],"yellow"],"green"];
+    let flattened = arr.flat(2);
+    console.log(flattened)
+    //["blue",["red",["a","b"],"yellow"],"green"];en flat le pusimos 
+    //el numero 2 y nos muestra 2 niveles de array
+</script> -->
+
+<!-- <script>
+    let arr = ["blue",["red",["a",["z",["m","j"],"y"],"b"],"yellow"],"green"];
+    let flattened = arr.flat(4);
+    console.log(flattened)
+</script> -->
+
+<!-- JAVASCRIPT 7 TERNARY OPERATOR EXERCICE -->
+
+<!-- <script>
+    let num = 5
+    let result = num % 2 === 0 ? "even" : "odd"
+    console.log(result); //odd
+</script> -->
+
+<!-- <script>
+
+    let x;
+    let result =typeof x !== "undefined" ? "defined" : "undefined"
+    console.log(result)
+</script> -->
+
+<!-- <script>
+
+    let num = -7
+    let result = num > 0 ? "positive" : num < 0 ? "negative" : "zero"
+    console.log(result)//empty
+</script> -->
+
+<!-- <script>
+    let str = '';
+    let result = str ==='' ? "empty" : 'not empty'
+    console.log(result)
+</script> -->
+
+<!-- <script>
+    let x ='Hello'
+    let result = typeof x === 'number' ? 'number' : 'not number'
+    console.log(result)//not a number
+</script> -->
+
+
+<!-- <script>
+    let num =6
+    let result = num % 2 === 0 && num % 3 === 0 ? 'divisible' : 'not divisible'
+    console.log(result)
+</script> -->
+
+<!-- <script>
+    let x = null
+    let result = x === null ? 'null' : 'not null'
+    console.log(result)//null
+</script> -->
+
+
+
+
+
+
+
+
+
+</body>
+</html>

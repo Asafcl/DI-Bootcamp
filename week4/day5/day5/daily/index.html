@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>99 bottle of beer</title>
+</head>
+<body>
+    <h1>99 Bottles of Beer</h1>
+	<label for="startNumber">Enter a number:</label>
+	<input type="number" id="startNumber">
+	<button onclick="generateSong()">Generate Song</button>
+	<p id="songLyrics"></p>
+    <div>
+    <img src="cerveza1.png" style="position: absolute; top: 0; right: 200px;" alt="">
+</div>
+	<script>
+		function generateSong() {
+            //get the number input
+			let startNumber = document.getElementById("startNumber").value;
+			let songLyrics = "";
+            //starts at the number entered and ends at 1 or 0
+			for (let i = startNumber; i >= 0; i--) {
+				if (i === 0) {
+                    
+					songLyrics += "No more bottles of beer on the wall, no more bottles of beer.<br>";
+					songLyrics += "Go to the store and buy some more, 99 bottles of beer on the wall.";
+				} else if (i === 1) {
+					songLyrics += "1 bottle of beer on the wall, 1 bottle of beer.<br>";
+					songLyrics += "Take it down and pass it around, no more bottles of beer on the wall.<br><br>";
+				} else {
+                    //
+					songLyrics += i + " bottles of beer on the wall, " + i + " bottles of beer.<br>";
+					//if bottle number is 2, place 1 and if it is 1, place 1
+                    songLyrics += "Take " + (i === 2 ? "1" : i-1) + " down and pass them around, ";
+					//if i = 2, the value of i will be 1 otherwise it will be 2
+                      songLyrics += (i === 2 ? "1" : i-1) + " bottle" + ((i === 2 ? "": "s") + " of beer on the wall.<br><br>");
+				}
+			}
+
+			document.getElementById("songLyrics").innerHTML = songLyrics;
+		}
+	</script>
+</body>
+</html>
