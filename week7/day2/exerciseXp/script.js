@@ -133,4 +133,9 @@
 //     return total;
 // }
 
+// OR
 
+// function addVat(details){
+//     const VAT_RATE = 1.17
+//     return details.reduce((acc, current) => (acc +=Number(current) * VAT_RATE),0)
+// }
