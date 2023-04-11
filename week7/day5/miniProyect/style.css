@@ -1,0 +1,15 @@
+#generate-btn{
+    border: 2px solid blue;
+    background-color: rgb(112, 199, 166);
+    color: white;
+    height: 35px;
+}
+
+#principalContainer{
+    border: 40px solid rgb(153, 93, 93);
+    padding: 40px;
+    width: 400px;
+    height: 400px;
+    margin-left: 450px;
+    background-color: rgb(179, 128, 128);
+}
