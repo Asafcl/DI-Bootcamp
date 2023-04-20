@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- In summary, map() transforms each element of an array, filter() removes elements from an array based on 
+a condition, and reduce() transforms an array into a single value.
+
+
+    map(): The map() method is used to create a new array by transforming each element of an existing 
+    array based on a provided function. The original array is not modified. The map() method returns an 
+    array with the same length as the original array. For example, you can use map() to convert an array 
+    of numbers to an array of their squares.
+    
+    filter(): The filter() method is used to create a new array that contains only the elements of 
+    an existing array that meet a certain condition based on a provided function. The original array 
+    is not modified. The filter() method returns an array that can be shorter or the same length as 
+    the original array. For example, you can use filter() to remove all the odd numbers from an array.
+    
+    reduce(): The reduce() method is used to transform an array into a single value based on a provided 
+    function. The reduce() method takes an initial value and applies the provided function to the elements 
+    of the array in a cumulative way, reducing them to a single value. The original array is not modified. 
+    For example, you can use reduce() to calculate the sum of an array of numbers. -->
+
+
+    <script>
+        // let almuerzos = [
+        //     {principal: 'pasta', postre: 'helados'}
+        //     {principal: 'tacos', postre: 'galletas'}
+        //     {principal: 'pizza', postre: 'flan'}
+        //     {principal: 'sushi', postre: 'pay de limon'}
+        // ]
+
+        // let platosPrincipales =[]
+
+        // for (let i=0 ;i<almuerzos.length;i++){
+        //     platosPrincipales.push(almuerzos[i].principal)
+        // }
+
+        // console.log(platosPrincipales)
+
+        // USING MAP METHOD
+
+    //     let platosPrincipales = almuerzos.map(function(almuerzo) {
+    //         console.log(almuerzo)
+    //     })
+    // 
+        // map method with return
+
+        // let platosPrincipales = almuerzos.map(function(almuerzo){
+        //     return almuerzo.principal
+        // })
+        //console.log(platosPrincipales)
+        //console.log(almuerzos) // console.loging the principal array
+    
+
+        // exercise 1
+
+        // function dobleNumbers(arr){
+        //     return arr.map(num => num * 2 )
+        // }
+
+        // console.log(dobleNumbers([1,2,3,4,5]))
+
+        // exercise 2
+
+        // function capitalizeStrings(arr){
+        //     return arr.map(str => str.toUpperCase())
+        // }
+        // console.log(capitalizeStrings(['hello', 'world']))
+
+        // exercise 3
+        // function getNames(arr){
+        //     return arr.map(x => x.name)
+        // }
+
+        // console.log(getNames([{name:'Jhon'}, {name:'Sarah'}, {name:'Mike'}]))
+
+        // exercise 4
+
+        // function changeNumber(num){
+        //     return num.map(num1 => num1%2 !==0 ? num1 * 3 : num1)
+        // }
+
+        // console.log(changeNumber([1,2,3,4,5]))
+
+        // exercise 5
+
+        // function arrayToString(arr){
+        //     return arr.map(str => str.trim()).join(' ') //las 2 juntas
+        //     return arr.map(str => str).join(' ')
+        // }
+
+        // const input = ['hello   ', 'world', '!', '    how', 'are', 'you', 'doing', 'today', '?']
+        // const output = arrayToString(input)
+        // console.log (output)
+
+        // FILTER :
+
+        // let almuerzos2 = [
+        //     {principal: 'pasta', postre: 'helados'},
+        //     {principal: 'tacos', postre: 'galletas'},
+        //     {principal: 'pizza', postre: 'flan'},
+        //     {principal: 'sushi', postre: 'pay de limon'},
+        //     {principal: 'pasta', postre: 'churros'},
+        //     {principal: 'pasta', postre: 'tiramisu'}
+        // ]
+
+        // let postresConFiltrosParaPasta =[]
+
+        // for(let i=0; i<almuerzos2.length;i++){
+        //     if(almuerzos2[i].principal ==="pasta"){
+        //         postresConFiltrosParaPasta.push(almuerzos2[i].postre)
+        //     }
+        // }
+        // console.log(postresConFiltrosParaPasta)
+
+        
+        // exercise 1
+
+            // let postresConFiltrosParaPasta = almuerzos2.filter(function(almuerzo){
+            
+            //     return almuerzo.principal==='pasta'
+            // })
+            // console.log(postresConFiltrosParaPasta)
+
+            // exercise 2
+
+            // let postresConFiltrosParaPasta = almuerzos2.filter(function(almuerzo){
+            //     return almuerzo.principal === 'pasta'
+            // })
+
+            // .map(function(almuerzo){
+            //     return almuerzo.postre
+            // })
+
+            // console.log(postresConFiltrosParaPasta)
+
+            // exercise 3
+
+            // function filterEvens(arr){
+            //     return arr.filter(num => num % 2 ===0)
+            // }
+
+            // const input = [1,2,3,4,5,6,7,8,9,10]
+            // const output = filterEvens(input)
+            // console.log(output)
+
+
+            // exercise 4
+
+            // function filterByLength(input, minLength) {
+            //     return input.filter(str => str.length >= minLength);
+            // }
+            
+            // const input = ['apple', 'banana', 'cherry', 'date', 'elderberry'];
+            // const minLength = 6;
+            // const output = filterByLength(input, minLength);
+            // console.log(output); // ['banana', 'cherry', 'elderberry']
+
+            // exercise 5
+
+// Write a function filterByProperty that takes an array of objects and a property name as input,
+// and uses the filter() method to return a new array that only contains the objects that have a true value
+// for the specified property.
+// function filterByProperty(arr, propName) {
+//   return arr.filter(obj => obj[propName]);
+// }
+// const input = [
+//   { name: 'Alice', age: 30, hasChildren: true },
+//   { name: 'Bob', age: 25, hasChildren: false },
+//   { name: 'Charlie', age: 40, hasChildren: true },
+//   { name: 'David', age: 20, hasChildren: false }
+// ];
+// const propName = 'hasChildren';
+// const output = filterByProperty(input, propName);
+// console.log(output); // [{ name: 'Alice', age: 30, hasChildren: true }, { name: 'Charlie', age: 40, hasChildren: true }]
+
+// exercise 1 reduce
+
+// let almuerzos = [
+//             {principal: 'pasta', postre: 'helados'},
+//             {principal: 'tacos', postre: 'galletas'},
+//             {principal: 'pizza', postre: 'flan'},
+//             {principal: 'sushi', postre: 'pay de limon'},
+//             {principal: 'pasta', postre: 'churros'},
+//             {principal: 'pasta', postre: 'tiramisu'}
+//         ]
+       
+       
+        // let cantidadPasta = 0;
+
+        // for (let i=0;i<almuerzos.length;i++){
+        //     if(almuerzos[i].principal ==='pasta'){
+        //         cantidadPasta++
+        //     }
+        // }
+
+        // console.log(cantidadPasta)
+
+        // exercise 1-1 reduce
+
+        // let cantidadPastas = almuerzos.reduce(function(contador,almuerzo){
+        //     if(almuerzo.principal === 'pasta'){
+        //         return contador + 1
+        //     }else{
+        //         return contador
+        //     }
+        // },0)
+        // console.log(cantidadPastas)
+
+
+        // exercise 2
+
+        // function sumArray(arr){
+        //     return arr.reduce( (acc, num) => acc + num, 0)
+        // }
+
+        //     console.log(sumArray([1,2,3,4,5]))
+        //     console.log(sumArray([-1,0,1]))
+        //     console.log(sumArray([10]))
+
+        // exercise 3
+
+        // function productArray(arr){
+        //     return arr.reduce((acc,num) => acc * num,1)
+        // }
+
+        // console.log(productArray([1,2,3,4,5]))
+        //     console.log(productArray([-1,2,-3]))
+        //     console.log(productArray([0,10,20]))     
+        
+        // exercise 4
+
+       
+// Given an array of objects representing books, write a function that returns an array of authors who
+// have written books that were published after the year 2000 and have sold more than 10,000 copies.
+
+// function showAuthor(books){
+//     return books.filter(book => (book.year >=2000 && book.copiesSold >=10000)).map(book =>book.author)
+        
+// }
+
+// const books = [
+//   {
+//     title: "The Alchemist",
+//     author: "Paulo Coelho",
+//     year: 1988,
+//     copiesSold: 65000000
+//   },
+//   {
+//     title: "The Hunger Games",
+//     author: "Suzanne Collins",
+//     year: 2008,
+//     copiesSold: 35000000
+//   },
+//   {
+//     title: "Harry Potter and the Philosopher's Stone",
+//     author: "J.K. Rowling",
+//     year: 1997,
+//     copiesSold: 120000000
+//   },
+//   {
+//     title: "The Da Vinci Code",
+//     author: "Dan Brown",
+//     year: 2003,
+//     copiesSold: 80000000
+//   },
+//   {
+//     title: "The Girl with the Dragon Tattoo",
+//     author: "Stieg Larsson",
+//     year: 2005,
+//     copiesSold: 30000000
+//   }
+// ];
+
+// console.log(showAuthor(books))
+
+// exercise 5
+
+// const arr1 = [1,2,3]
+// const arr2 = [4,5,6]
+// const arr3 = [...arr1,...arr2]
+// console.log(arr3)
+            
+    </script>
+</body>
+</html>
