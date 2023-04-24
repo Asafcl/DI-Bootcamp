@@ -286,7 +286,67 @@ a condition, and reduce() transforms an array into a single value.
 // const arr2 = [4,5,6]
 // const arr3 = [...arr1,...arr2]
 // console.log(arr3)
-            
+ 
+
+// exercise curse note
+// myArr = [10,20,30,40];
+
+// let newArr = myArr.map((val, i, arr) => {
+//   return {
+//     value: val,
+//     index: i
+//   };
+// });
+//console.log(newArr)//output value:10, index:0
+                        //  value:20, index:1....
+
+
+//exercise curse note
+// let party = [
+//   {
+//     desert: 'Chocolate Mousse',
+//     calories: 30,
+//   },
+//   {
+//     desert: 'Apple Pie',
+//     calories: 15,
+//   },
+//   {
+//     desert: 'Croissant',
+//     calories: 50,
+//   },
+//   {
+//     desert: 'Strawberry Icecream',
+//     calories: 5,
+//   },
+// ]
+
+// const reducer = (acc, x) => {
+//     if(x.desert !== 'Apple Pie')
+//         {
+//             console.log(x)
+//         return acc + x.calories
+//         }
+//         else
+//         return acc
+        
+// }
+
+// sum = party.reduce(reducer,0)
+// console.log('total: ' + sum )
+
+//exercise curse note
+
+// let prices = [12, 20, 18];
+// let newPriceArray = [...prices];
+// console.log(newPriceArray);//[12, 20, 18]
+
+
+//exercise curse note
+
+// let alphabets = ["A", ..."BCD", "E"];
+// console.log(alphabets);// ["A","B","C"","D","E"]
+
     </script>
 </body>
 </html>
