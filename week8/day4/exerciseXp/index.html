@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // exercise 1
+
+// const person = {
+//     name: 'John Doe',
+//     age: 25,
+//     location: {
+//         country: 'Canada',
+//         city: 'Vancouver',
+//         coordinates: [49.2827, -123.1207]
+//     }
+// }
+
+// const {name, location: {country, city, coordinates: [lat, lng]}} = person;
+
+// console.log(`I am ${name} from ${city}, ${country}. Latitude(${lat}), Longitude(${lng})`);
+//I am John Doe from Vancouver, Canada. Latitude 49.2827 Longitude -123.1207
+
+
+// exercise 2
+//destructuring the objUser parameters or extract first and last name propieties
+// function displayStudentInfo(objUser){
+//     //destructuring
+// }
+// //returning the string with the extracted values
+// displayStudentInfo(({first: 'Elie', last:'Schoppik'}));
+
+
+// // examnpe 3
+
+// const users = { user1: 18273, user2: 92833, user3: 90315 }
+// const usersArray = Object.entries(users)
+// console.log(usersArray)
+
+// const usersArrayModified= usersArray.map((user,id) => [user,id*2])
+
+// output ['user1', 18273]['user2', 92833]['user3', 90315]
+
+
+// exercise 4
+
+// class Person {
+//   constructor(name) {
+//     this.name = name;
+//   }
+// }
+
+// const member = new Person('John');
+// console.log(typeof member); //output object
+
+// exercise 5
+
+// class Dog {
+//   constructor(name) {
+//     this.name = name;
+//   }
+// };
+
+//   // 2
+//   class Labrador extends Dog {
+//   constructor(name, size) {
+//     super(name);
+//     this.size = size;
+//   }
+// };
+
+// exercise 6.1
+
+// [2] === [2] //false
+// {} === {}  //error
+
+    // 6.2
+
+// const object1 = { number: 5 }; //5
+// const object2 = object1; //5
+// const object3 = object2; //5
+// const object4 = { number: 5}; //5
+
+// object1.number = 4; 
+// console.log(object2.number) //4
+// console.log(object3.number) //4
+// console.log(object4.number) //5
+
+
+// 6.3.1
+
+// class Animal{
+//     constructor (name,type,color){
+//         this.name = name
+//         this.type = type
+//         this.color = color
+//     }
+// }
+
+// class Mamal extends Animal{
+//     sound(sound){
+//         return (`Im a ${this.type} named ${this.name} and Im ${this.color}. ${sound}`)
+//     }
+// }
+
+// const farmerCow = new Mamal('lily','cow','brown and white')
+// console.log(farmerCow.sound('Mooooo'))
+
+
+
+    </script>
+</body>
+</html>

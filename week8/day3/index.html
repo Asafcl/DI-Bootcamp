@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicios para aprender</title>
+</head>
+<body>
+    <script>
+            // exercise 1
+//         let mapa ={
+//             argentina: 'America',
+//             peru: 'America',
+//             colombia: 'America',
+//             usa: 'america', 
+//             china: 'asia',
+//             italia: 'europa',
+//             inglaterra: 'europa'
+//         }
+// console.log(mapa)
+
+        // let key = Object.keys(mapa)
+        // console.log(key)
+
+        // let value = Object.values(mapa)
+        // console.log(value)
+
+//         let entries = Object.entries(mapa)
+//         console.log(entries)
+//         console.log(entries[2][1])
+
+
+        // exercise 2 destructuring
+
+        // const arr = ['red', 'blue', 'green']
+
+        // const [lava, sky,tree] = arr
+
+        // console.log(lava)
+        // console.log(sky)
+        // console.log(tree)
+        
+
+        // //or console.log all at one
+
+        // console.log(arr)
+
+        // console.log(`lava: ${lava} sky: ${sky} tree: ${tree}`)
+
+
+        // example 3
+
+        // const obj ={
+        //     apple: 'red',
+        //     banana: 'yellow',
+        //     grape: 'purple'
+        // }
+
+        // // const apple = obj.apple
+        // // const banana =obj.banana
+        // // const grape = obj.grape
+
+        // //use inistead
+
+        // const {apple, ...rest} = obj
+        // console.log(obj)// banana y lo que le sigue no se crea
+
+            // example 4
+
+            // const person ={
+            //     name: 'joe due',
+            //     age: 25,
+            //     gender:'female'
+            // }
+            // const {name, age, gender='unknown'} = person   //gender is defalult unknown
+
+            // console.log(`I am ${name} and I am ${age} years old,  ${gender}` )
+
+            // example 5
+
+            // const person ={
+            //     name: 'Dominic',
+            //     age: 21
+            // }
+            // function printDetails({name,age}){
+            //     console.log(`the name is ${name} and ${age} years old`)
+            // }
+
+            // printDetails(person)
+
+            // example 5
+
+            // let number=[1,2]
+
+            // let [one, two,three =90] = number
+
+            // console.log(one)
+            // console.log(two)
+            // console.log(three)
+
+            // example 6
+
+            // function bottle(){
+            //     return ['bottle', 'water']
+            // }
+
+            // let [red,blue] = bottle()
+            // console.log(red)
+            // console.log(blue)
+
+            // exercise class
+                // class Car{
+                //     drive(){
+                //         console.log('you are driving the car')
+                //     }
+                //     brake(){
+                //         console.log('you step on the brakes!')
+                //     }
+                // }
+
+                // let car1 = new Car()
+                // let car2 = new Car()
+
+                // car1.drive()
+
+                // car2.brake()
+
+                // example 7
+                
+                
+//             class Car {
+//     constructor(maker, model, year, color) {
+//     this.maker = maker;
+//     this.model = model;
+//     this.year = year;
+//     this.color = color;
+//   }
+
+//   drive(){
+//     console.log("You drive the car!");
+//   }
+//   brake() {
+//     console.log("You step on the brakes!");
+//   }
+// }
+
+// let car1 = new Car("Ford", "Mustang", 2022, "red");
+// let car2 = new Car("Chevy", "Corvette", 2021, "blue");
+
+
+// console.log(car1.maker);
+// console.log(car1.model);
+// console.log(car1.year);
+// console.log(car1.color);
+
+// // // OR Console.log all at once
+
+// console.log(`make: ${car1.maker}, model: ${car1.model}, year: ${car1.year}, color: ${car1.color}`);
+// car1.brake();
+
+
+// exercise 8
+
+// class Person {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   sayHello() {
+//     console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+//   }
+// }
+
+// let person1 = new Person("John", 30);
+// person1.sayHello(); // Output: "Hello, my name is John and I am 30 years old."
+
+
+// SOLUTION
+
+// class Person {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   sayHello() {
+//     const { name, age } = this; // Destructuring the object
+//     console.log(`Hello, my name is ${name} and I am ${age} years old.`);
+//   }
+// }
+
+// let person1 = new Person("John", 30);
+// person1.sayHello(); // Output: "Hello, my name is John and I am 30 years old."
+
+// exercise 9
+
+// class Animal {
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   speak() {
+//     const { name } = this; // destructuring to access properties
+//     console.log(`${name} makes a sound.`);
+//   }
+// }
+
+// class Dog extends Animal {
+//   constructor(name, breed) {
+//     super(name); // setting the property directly without calling superclass constructor
+//     this.breed = breed;
+//   }
+// }
+
+// let dog1 = new Dog("Buddy", "Labrador");
+// dog1.speak(); // Output: "Buddy barks."
+
+// let dog2 = new Animal("Larry")
+// dog2.speak()
+
+
+
+                
+
+    </script>
+</body>
+</html>
