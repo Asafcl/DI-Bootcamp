@@ -65,14 +65,27 @@
           font-size: 14px;
           color: #666;
         }
+
+
       </style>
     </head>
     <body>
       <nav>
         <label id="rob">ROBOT FRIENDS</label> 
+        <img id="searchImage" src="robofriends.png" alt="Placeholder image">
         <input type="text" id="searchBox" placeholder="Search by name">
     </nav>
         <div id="cardContainer"></div>
+
+        <div id="profileContainer">
+
+          <div id="backBtn">Back</div>
+          <img id="profileImage" alt="profileImage">
+          <div id="profileDetails"></div>
+
+        </div>
+
+
 
 
     <script>
@@ -153,6 +166,13 @@
 const cardContainer = document.getElementById('cardContainer'); // Get the container element by its id
 const searchBox = document.getElementById('searchBox'); // Get the search box input element by its id
 
+const profileContainer = document.getElementById('profileContainer')
+const profileImage = document.getElementById('profileImage')
+const profileDetails = document.getElementById('profileDetails')
+const backBtn = document.getElementById('backBtn')
+
+
+
 // Function to filter robots based on input value
 const filterRobots = () => {
   // Clear card container
@@ -195,6 +215,8 @@ const filterRobots = () => {
 
     // Append card to card container
     cardContainer.appendChild(card);
+
+    img.addEventListener('click', ()=> showprofile(robot))
   });
 };
 
@@ -203,6 +225,27 @@ searchBox.addEventListener('input', filterRobots);
 
 // Initial card creation on page load
 filterRobots();
+
+const showprofile = (robot) => {
+  profileImage.src = robot.image
+  profileImage.alt = robot.name
+
+  profileDetails.innerHTML =`
+  <h2>${robot.name}</h2>
+  <p>Username: ${robot.username}</p>
+  <p>email: ${robot.email}</p>`;
+  cardContainer.style.display = 'none'
+  profileContainer.style.display = 'block'
+};
+
+
+
+const goBack = () => {
+  profileContainer.style.display ='none'
+  cardContainer.style.display = 'block'
+}
+
+backBtn.addEventListener('click', goBack)
 
     </script>
 </body>
