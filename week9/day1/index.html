@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+<body id="idBody" style="background-image: url(./acuatico.jpg)">
+
+
+    <!-- <form name="my">
+        <input name="one" value="1">
+        <input name="two" value="2">
+      </form>
+      
+      <form name="yours">
+        <input name="one" value="55555">
+        <input name="two" value="2">
+      </form>
+
+      <script>
+        // get the form
+        let theForm = document.forms.yours; 
+        console.log(theForm);
+        // <form name="yours">
+        //   <input name="one" value="55555">
+        //   <input name="two" value="2">
+        // </form>
+      
+        // get the element
+        let elem = theForm.elements.one; 
+        console.log(elem); 
+        // <input name="one" value="55555">
+      </script>
+
+
+<form>
+    <label for="age">Age 10</label>
+    <input type="radio" name="age" value="10">
+    <label for="age">Age 20</label>
+    <input type="radio" name="age" value="20">
+  </form>
+  
+  <script>
+    let form = document.forms[0];
+    let ageElems = form.elements.age;
+    console.log(ageElems)
+    // RadioNodeList(2)
+    //  0: input
+    //  1: input
+    //  length: 2
+    console.log(ageElems[0].value); // "10"
+  </script>
+
+<form id="form">
+    <fieldset name="userFields">
+      <legend>info</legend>
+      <input name="login" type="text">
+    </fieldset>
+</form>
+
+<script>
+  console.log(form.elements.login); // <input name="login" type="text">
+  let formFieldset = form.elements.userFields;
+  console.log(formFieldset);
+    // <fieldset name="userFields">
+    //   <legend>info</legend>
+    //   <input name="login" type="text">
+    // </fieldset>
+
+  // we can get the input by name both from the form and from the fieldset
+  console.log(fieldset.elements.login == form.elements.login); // true
+</script>
+
+<form id="form">
+    <input name="login">
+  </form>
+  
+  <script>
+    console.log(form.elements.login == form.login); // true, the same <input>
+    form.elements[0].name = "username";
+    // change the name of the input
+    // form.elements updated the name:
+    console.log(form.elements.login); // undefined
+    console.log(form.elements.username); // <input name="username">
+    // form allows both names: the new one and the old one
+    console.log(form.username == form.login); // true
+  </script>
+
+
+<form id="frm">
+    <input type="text" name="login">
+    <input type="text" name="name">
+  </form>
+  
+  <script>
+    // // form -> element
+    let inputLogin = document.forms[0].login;
+    console.log(inputLogin) // <input type="text" name="login">
+  
+    // // element -> form
+    console.log(login.form); 
+    // <form id="frm">
+    //   <input type="text" name="login">
+    //   <input type="text" name="name">
+    // </form>
+  </script>
+
+
+<input type="text" name="txt" value="">
+<textarea name="name" rows="8" cols="80"></textarea>
+
+
+<select id="select">
+    <option value="apple">Apple</option>
+    <option value="pear">Pear</option>
+    <option value="banana">Banana</option>
+  </select>
+  
+  <script>
+    // all three lines do the same thing
+    select.options[2].selected = true;
+    select.selectedIndex = 2;
+    select.value = 'banana';
+    // please note: options start from zero,
+    //so index 2 means the 3rd option.
+  </script>
+
+
+
+<select id="select" multiple>
+    <option value="blues" selected>Blues</option>
+    <option value="rock" selected>Rock</option>
+    <option value="classic">Classic</option>
+  </select>
+  
+  <script>
+    // get all selected values from multi-select
+    let selected = Array.from(select.options)
+      .filter(option => option.selected)
+      .map(option => option.value);
+  
+     console.log(selected); // ["blues", "rock"]
+  </script>
+
+
+
+<script>
+let option = new Option("Text", "value");
+// creates <option value="value">Text</option>
+
+// The same option, but selected:
+let option = new Option("Text", "value", true, true);
+
+</script> -->
+
+
+<!-- USER FORM WHICH TAKES USER TO WELCOME PAGE AND CONSOLE LOGS USER INFO -->
+
+
+<h2 id="welcomeTitle" style="display: none;">Bienvenido a su parque acuatico de Mexico</h2>
+
+
+<form id="login-form" onsubmit="submitForm(event)">
+    <label for="username" id="usernameL">Username:</label>
+    <input type="text" id="username" name="username"><br>
+    <label for="password" id="passwordL">Password:</label>
+    <input type="password" id="password" name="password"><br>
+    <input type="submit" value="Submit" id="submitBtn">
+  </form>
+
+  <h2 id="welcome-msg" style="display: none;">Welcome to this page!</h2>
+  
+  <script>
+    function submitForm(event) {
+      event.preventDefault(); // prevent the form from submitting normally
+      
+      // get the values of the form fields
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      
+      // hide the login form
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('idBody').style.display ='none'
+
+      
+      // show the welcome message
+    //   const welcomeMsg = document.getElementById('welcome-msg');
+    //   welcomeMsg.style.display = 'block';
+      
+      const shoWelcome = document.getElementById('welcomeTitle')
+      shoWelcome.style.display = 'block'
+
+      const backImgChange = document.getElementById('idBody')
+      backImgChange.style.backgroundImage = "url('./acuatico2.jpeg')";
+      backImgChange.style.backgroundSize = "cover";
+      backImgChange.style.display = 'block'
+      
+      
+
+    //   welcomeMsg.innerText = `Welcome to this page, ${username}!`;
+    //   const getIdBody = document.getElementById('idBody')
+
+    
+
+      // log the username and password to the console
+      console.log(`Username: ${username}`);
+      console.log(`Password: ${password}`);
+    
+    }    
+  </script>
+</body>
+</html>

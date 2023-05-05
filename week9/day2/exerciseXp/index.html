@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form action="" method="GET"> EXERCISE 1  -->
+        <!-- EXERCISE 2 -->
+    <!-- <form action="" method="$_POST">
+        <div>
+        <label for="name">Name</label>
+        <input id="name" type="text" value="asaf" name="name">
+         </div>
+         <div>
+            <label for="comments">Comments</label>
+            <div>
+            <textarea for="comments" cols="30" rows="10" name="comments">Hello this is a Comments</textarea>
+            </div>
+        </div>
+        <input type="submit" value="send">
+    </form> -->
+
+    <!-- EXERCISE 3 -->
+    
+    <script>
+const marioGame = {
+  detail : "An amazing game!",
+  characters : {
+      mario : {
+        description:"Small and jumpy. Likes princesses.",
+        height: 10,
+        weight: 3,
+        speed: 12,
+      },
+      bowser : {
+        description: "Big and green, Hates princesses.",
+        height: 16,
+        weight: 6,
+        speed: 4,
+      },
+      princessPeach : {
+        description: "Beautiful princess.",
+        height: 12,
+        weight: 2,
+        speed: 2,
+      }
+  },
+}
+// const passToJesson = JSON.stringify(marioGame)
+// console.log(passToJesson)
+
+
+// const passToJeson = JSON.stringify(marioGame,null,4)
+// console.log('stringify:',passToJeson)
+
+const  passToJeson = JSON.stringify(marioGame,(key,value)=>{
+    if (key ==='speed'){
+        return undefined
+    }
+    if(key ==='height'){
+        return value + 'm'
+    }
+    if (key === 'weight'){
+        return value + 'kg'
+    }
+    return value
+},4)
+console.log (passToJeson)
+    </script>
+</body>
+</html>

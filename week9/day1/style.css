@@ -1,0 +1,30 @@
+body{
+  background-color: rgb(245, 206, 206);  
+  
+}
+
+#welcomeTitle{
+    color: rgb(4, 83, 4);
+    margin-left: 400px;
+    background-attachment: ;
+}
+
+/* #username{
+    margin-left: 1000px;
+} */
+
+#usernameL{
+    margin-left: 1000px;
+    color: rgb(4, 83, 4);
+}
+
+
+#passwordL{
+    margin-left: 1002px;
+    color: rgb(4, 83, 4);
+}
+
+#submitBtn{
+    margin-left: 1190px;
+}
+

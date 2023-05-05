@@ -220,11 +220,46 @@
 // let dog2 = new Animal("Larry")
 // dog2.speak()
 
-class example {
+const cars ={
+    model: 'toyota',
+    color:  'blue'
+}
+
+class Ejemplo {
     constructor(number){
-        this
+        this.number = number
+        
+    }
+    imprimeEjemplo1(){
+        const { number } = this
+        console.log(`I am ejemplo 1, your number is ${number}` )
+        const carrosKeys = Object.keys(cars)
+        console.log(carrosKeys)
+
     }
 }
+
+class Ejemplo2 extends Ejemplo{
+    constructor (number){
+    super(number)
+    this.number =number
+}
+    imprimeEjemplo2(){
+        const { number } = this
+        console.log(`I am ejemplo 1, your number is ${this.number}` )
+        const carrosValue = Object.values(cars)
+        console.log(carrosValue)
+    }   
+}
+
+const impEntries = Object.entries(cars)
+console.log(impEntries)
+const imp = new Ejemplo(3)
+imp.imprimeEjemplo1()
+
+
+const imp2 = new Ejemplo2(5)
+imp2.imprimeEjemplo2()
 
                 
 
