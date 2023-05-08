@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- exercise 1 -->
+    <!-- <script>
+        const url = 'https://api.giphy.com/v1/gifs/search?q=hilarious&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My'
+
+        const xhr = new XMLHttpRequest()
+        xhr.addEventListener('load', logRequest)
+        xhr.open('GET', url)
+        xhr.send()
+
+
+        function logRequest(e){
+            const response = JSON.parse(xhr.response)
+            const first = response.data[0]
+            console.log('first', first)
+        }
+
+    </script> -->
+
+    <!-- exercise 2 -->
+<script>
+    // url = "https://api.giphy.com/v1/gifs/search?q=sun&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My&limit=10&offset=2"
+
+        const BASE_URL = 'https://api.giphy.com/v1/gifs/search'
+        const searchTerm = 'sun'
+        const rating = 'g'
+        const apikey = 'hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My'
+        const limit = 10
+        const offset = 2
+
+        const url = `${BASE_URL}?q=${searchTerm}&rating={rating}&api_key=${apikey}&limit=${limit}&offset=${offset}`
+
+        const xhr = new XMLHttpRequest()
+        xhr.addEventListener('load', logRequest)
+        xhr.open('GET', url)
+        xhr.send()
+
+
+        function logRequest(e){
+            const response = JSON.parse(xhr.response)
+            // console.log('response', response)
+            console.log(url)
+        }
+    </script>
+</body>
+</html>
