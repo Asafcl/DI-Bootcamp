@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- first.html -->
+<form id="myForm">
+     <label for="name">Name:</label>
+     <input type="text" id="name" name="name"><br>
+    
+     <label for="email">Email:</label>
+     <input type="email" id="email" name="email"><br>
+    
+     <button type="submit">Submit</button>
+    </form>
+    
+    <script>
+     const form = document.querySelector('#myForm');
+    
+     form.addEventListener('submit', (event) => {
+     event.preventDefault();
+    
+     const name = document.querySelector('#name').value;
+     const email = document.querySelector('#email').value;
+     const queryString = `?name=${name}&email=${email}`;
+    
+     window.location.href = 'second.html' + queryString;
+     });
+    </script>
+    
+    
+    
+    <!-- second.html -->
+    <h1>Thank you for submitting your information!</h1>
+    
+    <script>
+     const queryString = window.location.search;
+     const urlParams = new URLSearchParams(queryString);
+     const name = urlParams.get('name');
+     const email = urlParams.get('email');
+    
+    const nameElem = document.createElement('p');
+     nameElem.textContent = `Name: ${name}`;
+     document.body.appendChild(nameElem);
+    
+     const emailElem = document.createElement('p');
+     emailElem.textContent = `Email: ${email}`;
+     document.body.appendChild(emailElem);
+    </script>
+</body>
+</html>
