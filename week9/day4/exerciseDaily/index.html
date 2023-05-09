@@ -50,6 +50,7 @@
             gifDiv.appendChild(gifImg);
             gifDiv.appendChild(deleteBtn);
             gifList.appendChild(gifDiv);
+            
           });
       }
       
@@ -59,5 +60,19 @@
       });
       
       </script>
+      <style>
+        .gif-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.gif-list div {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+      </style>
 </body>
 </html>
