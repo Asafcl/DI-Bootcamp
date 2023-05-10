@@ -11,7 +11,7 @@
     <form style="background-color: aqua;">
         <label for="category-input" style="color: blueviolet; font-size: 30px; margin-left: 300px; ">Enter a category:</label>
         <input type="text" id="category-input" name="category" style="color: blueviolet; width: 300px; text-align: center;">
-        <button type="submit" style="color: blueviolet;">Fetch Gif</button>
+        <button type="submit" style="color: blueviolet; background-color: lightgrey;">Fetch Gif</button>
       </form>
       <div class="gif-list" style="text-align: center;"></div>
       <button class="delete-all-btn" style=" margin-left: 1000px; color: blueviolet;">Delete All</button>
@@ -65,14 +65,22 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
 }
-.gif-list div {
+    .gif-list div {
   margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  border: 2px solid black;
 }
+
+.gif-list img{
+    height: 200px;
+    width: 300px;
+}
+
       </style>
 </body>
 </html>
