@@ -74,4 +74,10 @@ button[type="submit"] {
   margin-bottom: 10px;
 }
 
+li{
+  
+    cursor: pointer;
+  }
+
+
  

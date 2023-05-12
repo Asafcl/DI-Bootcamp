@@ -21,17 +21,16 @@ true != true  //false, true isnt different from true
 // Hint: use some string methods
 
 
-let numbers123 = prompt("ingrese numeros separados por coma( , )");
-let sum = reduce(numbers123);
-// if(numbers123.length!=NaN){
-//     for (let i; i<numbers123.length && numbers123 !=',';i++){
-//         let num=numbers123[i];
-//     }
+// let numbers123 = prompt("ingrese numeros separados por coma( , )");
+// let num = numbers123.split(',')
+// let sum = 0
 
-
+// for(i=0;i<num.length;i++){
+//     sum +=Number( num[i])
 // }
-console.log(num);
-console.log(numbers123);
+
+// console.log(sum);
+
 
 
 // Exercise 3 : Find Nemo
@@ -40,6 +39,17 @@ console.log(numbers123);
 // 2. Find the word “Nemo”
 // 3. Console.log a string as follows: "I found Nemo at [the position of the word Nemo]".
 // 4. If you can’t find Nemo, console.log “I can’t find Nemo”.
+
+
+// const palabra = prompt('ingrese una oracion que contenga Nemo')
+
+// let indexNemo = palabra.indexOf('nemo')
+
+// if(indexNemo>=0){
+//     console.log("I found Nemo at the position " + indexNemo)
+// }else
+// console.log ('I can’t find Nemo')
+
 
 
 
@@ -55,3 +65,32 @@ console.log(numbers123);
 // If the number given is evenly divisible by 2, add a exclamation mark to the end.
 // If the number given is evenly divisible by 5, return the string in ALL CAPS.
 // If the number given is evenly divisible by both 2 and 5, return the string in ALL CAPS and add an exclamation mark to the end.
+
+let num = prompt('enter a number')
+num = Number(num)
+
+
+if( num < 2){
+    console.log('boom')
+}
+if(num > 2){
+    var num2 = String(num)
+    for (i=0;i<num;i++){
+        num2 = num2 + 'o'  
+    }
+    console.log((num2))
+}
+if(num%2===0){
+    let num3 = num2 +'!'
+    console.log(num3)
+}   
+if(num%5===0){
+    let num4 = num2.toUpperCase()
+    console.log(num4)
+}
+if (num%2 === 0 && num%5===0){
+     let num5 = num2
+     num5 = num5.toUpperCase() + '!'
+     console.log(num5)
+    
+}
