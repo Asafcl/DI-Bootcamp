@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Currency Converter</title>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <label for="from">From:</label>
+    <!-- hace lista para seleccionar -->
+    <select id="from">
+      <option value="EUR">EUR</option>
+      <option value="USD">USD</option>
+      <option value="GBP">GBP</option>
+      <option value="MXN">MXN</option>
+      <option value="AUD">AUD</option>
+      <option value="BGN">BGN</option>
+      <option value="CAD">CAD</option>
+      <option value="CHF">CHF</option>
+      <option value="CNY">CNY</option>
+      <option value="ILS">ILS</option>
+      
+    </select>
+    <br />
+    <label for="to">To:</label>
+    <!-- hace lista para seleccionar -->
+    <select id="to">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="MXN">MXN</option>
+      <option value="AUD">AUD</option>
+      <option value="BGN">BGN</option>
+      <option value="CAD">CAD</option>
+      <option value="CHF">CHF</option>
+      <option value="CNY">CNY</option>
+      <option value="ILS">ILS</option>
+
+     
+    </select>
+
+    <br />
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" />
+    <br />
+    <button id="convertBtn">Convert</button>
+    <button id="switchBtn">Switch</button>
+    <br />
+    <div id="result"></div>
+
+    <script>
+      // creo variables para la API, para los botones y el resultado
+        const apiKey = "a0aae17a1bb56b55943e066e";
+        const convertBtn = document.getElementById("convertBtn");
+        const switchBtn = document.getElementById("switchBtn");
+        const resultDiv = document.getElementById("result");
+
+        // al hacer click y converir de una moneda a otra, va a la funcion convertir moneda
+        convertBtn.addEventListener("click", convertCurrency);
+        // al hacer click y converir de una moneda a otra, va a la funcion switch monedas
+        switchBtn.addEventListener("click", switchCurrencies);
+
+        async function convertCurrency() {
+          //pone en una variable la moneda inicial de cambio, la segunda moneda que se va
+          //a cambiar y la cantidad para luego hacer la conversion de una a otra
+          const fromCurrency = document.getElementById("from").value;
+          const toCurrency = document.getElementById("to").value;
+          const amount = parseFloat(document.getElementById("amount").value);
+          //tiene q tener una cantidad y que sea mayor igual a cero, si no da error 
+          if (isNaN(amount) || amount <= 0) {
+            resultDiv.textContent = "Please enter a valid amount.";
+            return;
+          }
+          //en caso que no pase la prueba anterior, igresa a las dos monedas marcadas
+          //junto con la cantidad asignada y hace la conversion
+          const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/${fromCurrency}/${toCurrency}/${amount}`;
+          //hace un chequeo en try si funciona esa url
+          try {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            //el resultado que da lo deja con 2 decimales
+            const convertedAmount = data.conversion_result.toFixed(2);
+            //literal element pone la cantidad puesta el simbolo de la moneda 'from'
+            //= al cantidad calculad y simbolo de la moneda
+            resultDiv.textContent = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+            //si hubo error en el primer if, entra a catch y consol.log 'An error occurred:'
+          } catch (error) {
+            console.log("An error occurred:", error);
+          }
+        }
+
+        function switchCurrencies() {
+          //agarra el el signo de la moneda de 'from' para darselo a 'to' 
+          //y hacer el switch
+          const fromCurrency = document.getElementById("from").value;
+          const toCurrency = document.getElementById("to").value;
+          
+          document.getElementById("from").value = toCurrency;
+          document.getElementById("to").value = fromCurrency;
+          resultDiv.textContent = "";
+        }
+
+        // https://app.exchangerate-api.com/
+        // https://www.exchangerate-api.com/docs/supported-codes-endpoint
+    </script>
+</body>
+</html>

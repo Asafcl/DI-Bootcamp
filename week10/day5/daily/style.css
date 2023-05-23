@@ -1,0 +1,25 @@
+body{
+    background-image: url(monedas\ change.webp);
+    display: flex;
+    flex-direction: column;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-top: ;
+    align-items: center;
+    border: 1px solid rgb(79, 79, 189);
+    
+}
+input{
+    align-items: center;
+}
+select option div{
+    align-content: center;
+    align-items: center;
+
+}
+div{
+    align-items: center;
+}
+select{
+    color: blue;
+}
