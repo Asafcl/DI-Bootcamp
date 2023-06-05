@@ -1,16 +1,21 @@
-body{
+html{
     background-image: url(monedas\ change.webp);
+}
+
+body{
+    background-color: rgba(30, 0, 0, 0.9);;
     display: flex;
     flex-direction: column;
     margin-left: 500px;
     margin-right: 500px;
-    margin-top: ;
+    margin-top: 50px;
     align-items: center;
     border: 1px solid rgb(79, 79, 189);
-    
+    color: white;
 }
 input{
-    align-items: center;
+    text-align: center;
+    
 }
 select option div{
     align-content: center;
@@ -19,6 +24,7 @@ select option div{
 }
 div{
     align-items: center;
+    color:white
 }
 select{
     color: blue;
