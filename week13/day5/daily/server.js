@@ -21,6 +21,10 @@ app.get('/loginForm', (req, res) => {
   res.sendFile(path.join(__dirname, 'loginForm.html'));
 });
 
+app.get('*',(req,res)=>{
+  res.redirect('/registerForm.html')
+})
+
 // Route for user registration
 app.post('/register', (req, res) => {
   const { name, last_name, email, username, password } = req.body;

@@ -26,7 +26,7 @@
 //   let listItems = '';
 //   for (const item of shoppingList) {
 //     listItems += `<li>${item.amount} ${item.item}</li>`;
-//   }
+//   } 
 //   res.send(`
 //     <h1>Shopping List Items</h1>
 //     <ul>${listItems}</ul>

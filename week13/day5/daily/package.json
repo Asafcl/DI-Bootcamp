@@ -1,7 +1,7 @@
 {
   "name": "daily",
   "version": "1.0.0",
-  "description": "",
+  "description": "el programa registra un usuario nuevo, si ya existe, da mensaje de error\r al ingresar con su login y passwor bien, puede ingresar, de lo contrario no lo deja ingresar \r hasta que ponga bien el usuario y password",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
