@@ -136,15 +136,30 @@
     // }
 
 
-    import React from 'react'
-    import {Exercise4} from './components/exercise4';
+    // import React from 'react'
+    // import {Exercise4} from './components/exercise4';
     
-    export const App = () => {
-      return (
-        <div>
-          <Exercise4 />
-        </div>
-      );
-    };
+    // export const App = () => {
+    //   return (
+    //     <div>
+    //       <Exercise4 />
+    //     </div>
+    //   );
+    // };
 
 // export default app
+
+
+
+// exercise daily
+
+import React from 'react'
+import { DemoCarousel } from "./components/demoCarousel";
+
+export function App() {
+  return(
+    <>
+    <DemoCarousel />
+    </>
+  )
+}
