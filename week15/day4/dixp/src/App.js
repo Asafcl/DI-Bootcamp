@@ -40,26 +40,26 @@
 // EXERCISE 4 : ComponentDidMount
 
 
-// import React from "react";
-// import {Color} from "./components/Color.components";
+import React from "react";
+import {Color} from "./components/Color.components";
 
 
 
-// export function App() {
-//   return (
-//     <>
-//     <Color />
-//     </>
-//   );
-// }
-
-import React from "react"
-import {Vote} from "./components/Vote"
-
-export function App(){
-  return(
+export function App() {
+  return (
     <>
-    <Vote />
+    <Color />
     </>
-  )
+  );
 }
+
+// import React from "react"
+// import {Vote} from "./components/Vote"
+
+// export function App(){
+//   return(
+//     <>
+//     <Vote />
+//     </>
+//   )
+// }
