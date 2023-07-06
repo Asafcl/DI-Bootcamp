@@ -70,6 +70,7 @@ export const Vote = () => {
     };
 
     return (
+        
         <div>
             <h1>Vote Your Language!</h1>
             <div className="languages">
