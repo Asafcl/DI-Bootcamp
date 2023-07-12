@@ -45,6 +45,7 @@ function App() {
 
   return (
     <div className="container">
+      <div className='block1'>
       <h2>Entered information:</h2>
       <p>Online Learning</p>
       <p className="name">Your name: {formData.firstName} {formData.lastName}</p>
@@ -57,7 +58,8 @@ function App() {
         <li className="lactose-free">Lactose free: {formData.lactoseFree ? 'Yes' : 'No'}</li>
         <li className="vegan-meal">Vegan meal: {formData.veganMeal ? 'Yes' : 'No'}</li>
       </ul>
-  
+      </div>
+  <div>
       <h2>Enter information:</h2>
       <form className="form" onSubmit={handleSubmit}>
         <input
@@ -158,6 +160,7 @@ function App() {
         <br />
         <button type="submit" className="submit">Submit</button>
       </form>
+      </div>
     </div>
   );
   }
