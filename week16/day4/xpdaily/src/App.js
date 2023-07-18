@@ -360,34 +360,34 @@
 // part 2
 
 
-import React from "react";
-import { UserForm } from "./components/UserForm";
+// import React from "react";
+// import { UserForm } from "./components/UserForm"
 
-export default class App extends React.Component {
-    constructor(props) {
-        super(props);
-       this.state = { message: null }; 
-    }
+// export default class App extends React.Component {
+//     constructor(props) {
+//         super(props);
+//        this.state = { message: null }; 
+//     }
     
-    async componentDidMount() {
-        const url = "http://localhost:3001/api/hello";
-        try {
-            const resText = await fetch(url);
-            const res = await resText.text();
-            this.setState({ message: res });
-        } catch (err) {
-            console.error(err)
-        }
-    }
-    render() {
-        return (
-            <>
-            <UserForm setMessage={message => this.setState({ message })}/>
-            <div>Message: {this.state.message}</div>
-            </>
-        );
-    }
-  }
+//     async componentDidMount() {
+//         const url = "http://localhost:3001/api/hello";
+//         try {
+//             const resText = await fetch(url);
+//             const res = await resText.text();
+//             this.setState({ message: res });
+//         } catch (err) {
+//             console.error(err)
+//         }
+//     }
+//     render() {
+//         return (
+//             <>
+//             <UserForm setMessage={message => this.setState({ message })}/>
+//             <div>Message: {this.state.message}</div>
+//             </>
+//         );
+//     }
+//   }
 
 
 //   part 2.1
@@ -430,26 +430,26 @@ export default class App extends React.Component {
 // // REFACTORED INTO FUNCTiONAL COMPONENT
 
 
-// import React, { useState, useEffect } from "react";
-// import { UserForm } from "./components/UserForm.component";
+import React, { useState, useEffect } from "react";
+import { UserForm } from "./components/UserForm";
 
-// export const App = () => {
-//   const [message, setMessage] = useState(null);
+export const App = () => {
+  const [message, setMessage] = useState(null);
 
-//   useEffect(() => {
-//     const url = "http://localhost:3001/api/hello";
-//     fetch(url)
-//       .then(res => res.text())
-//       .then(res => setMessage(res));
-//   }, []);
+  useEffect(() => {
+    const url = "http://localhost:3001/api/hello";
+    fetch(url)
+      .then(res => res.text())
+      .then(res => setMessage(res));
+  }, []);
 
-//   return (
-//     <>
-//       <UserForm setMessage={setMessage} />
-//       <div>Message: {message}</div>
-//     </>
-//   );
-// };
+  return (
+    <>
+      <UserForm setMessage={setMessage} />
+      <div>Message: {message}</div>
+    </>
+  );
+};
 
 
-// export default App;
+export default App;

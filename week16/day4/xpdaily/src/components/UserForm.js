@@ -80,7 +80,7 @@
 // REFACTOR INTO FUNCTIONAL COMPONENT
 
 
-import React from "react";
+import React, { Component } from "react";
 
 export const UserForm = ({ setMessage }) => {
     const handleSubmit = async (e) => {
