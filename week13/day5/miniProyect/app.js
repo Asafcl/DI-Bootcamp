@@ -56,8 +56,7 @@ app.get('/', (req, res) => {
   }
   
   const html = `
-    <h1>Shopping List Items</h1>
-    <ul>${listItems}</ul>
+    
     
     <h1>Add Item</h1>
     <form action="/addItem" method="POST">
@@ -67,6 +66,9 @@ app.get('/', (req, res) => {
       <input type="number" id="amount" name="amount" required><br><br>
       <input type="submit" value="Submit">
     </form>
+
+    <h1>Shopping List Items</h1>
+    <ul>${listItems}</ul>
   `;
   
   res.send(html);
