@@ -1,10 +1,13 @@
-
-import './App.css';
+import React from 'react';
+import TransactionForm from './components/TransactionForm';
+import TransactionList from './components/TransactionList';
 
 function App() {
   return (
-    <div className="App">
-     
+    <div>
+      <h1>Financial Transactions App</h1>
+      <TransactionForm />
+      <TransactionList />
     </div>
   );
 }

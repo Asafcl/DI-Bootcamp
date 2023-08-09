@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+npx create-react-app redux-financial-transactions-app
+cd redux-financial-transactions-app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Install Redux and React Redux
+Install the required Redux and React Redux libraries:
 
-## Available Scripts
+npm install redux react-redux --save
 
-In the project directory, you can run:
+createStore is deprecated so redux-toolkit is needed in order to update index
+to configureStore.
 
-### `npm start`
+npm install @reduxjs/toolkit --save
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Components
+The app consists of two main components:
 
-### `npm run eject`
+TransactionForm: This component is responsible for rendering a form with four inputs (account number, FSC, name, and amount) and a submit button. It uses local state (formData) to manage the form data. When the form is submitted, it dispatches an action (insert or update) to add a new transaction or update an existing one in the Redux store. It is connected to the Redux store using connect() from react-redux.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+TransactionList: This component renders a table with the list of transactions fetched from the Redux store. It displays the account number, FSC, name, and amount for each transaction in the table rows. It also provides buttons to edit or delete each transaction. When the edit or delete buttons are clicked, the corresponding action (updateIndex or deleteTransaction) is dispatched to the Redux store. It is also connected to the Redux store using connect() from react-redux.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Actions
+The actions are defined in the transactionActions.js file. There are four action types:
+INSERT: This action is dispatched when the form is submitted to add a new transaction to the store.
+UPDATE: This action is dispatched when the form is submitted to update an existing transaction in the store.
+DELETE: This action is dispatched when the delete button is clicked to remove a transaction from the store.
+UPDATE_INDEX: This action is dispatched when the edit button is clicked to update the currentIndex in the store.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Reducers
+The reducers are defined in the transactionReducer.js file. The reducer function handles the state changes based on the dispatched actions. It uses a switch case to determine the action type and updates the state accordingly. For example, when the INSERT action is dispatched, the reducer adds the new transaction to the list in the state. Similarly, when the UPDATE action is dispatched, the reducer updates the existing transaction with the new data.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Store
+The Redux store is created using the configureStore function from @reduxjs/toolkit. It takes the transactionReducer as an argument to manage the state changes. The initial state of the store includes currentIndex set to -1 (indicating no current transaction) and the list of transactions fetched from the localStorage.
 
-## Learn More
+localStorage
+The app uses localStorage to persist the transaction data in the browser. When a new transaction is added or an existing transaction is updated or deleted, the data is stored in localStorage to ensure that it is retained even after the page is refreshed.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Provider
+The app wraps the App component with the Provider component from react-redux, which allows all components in the app to access the Redux store and receive updates when the state changes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Overall Flow of the App:
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+When the app starts, it fetches the transactions data from localStorage and initializes the Redux store with this data.
+The App component renders the TransactionForm and TransactionList components.
+The TransactionForm component allows users to add new transactions or update existing ones. When the form is submitted, it dispatches the corresponding action (insert or update) to the Redux store, which updates the state with the new transaction data.
+The TransactionList component displays the list of transactions fetched from the Redux store in a table. It provides buttons to edit or delete each transaction. When these buttons are clicked, the corresponding actions (updateIndex or deleteTransaction) are dispatched to the Redux store, which updates the state accordingly.
+All changes in the Redux store are automatically propagated to the connected components (TransactionForm and TransactionList), and they update their views accordingly.
+That's the overall working of the entire app. Users can add, edit, and delete transactions, and the data is persistently stored in localStorage. The app uses Redux to manage the state and react-redux to connect the components to the Redux store.
