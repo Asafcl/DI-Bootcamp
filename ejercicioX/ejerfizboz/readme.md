@@ -1,0 +1,1 @@
+divisible 3 fizz,  divisible 5, ambos fizbos, de lo contrario imprime numero
