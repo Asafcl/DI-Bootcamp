@@ -23,7 +23,6 @@
 
 .search_nav{
   display: flex;
-  align-items: start;
   padding-bottom: 1.5rem;
   justify-content: center;
 }

@@ -6,7 +6,7 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import "./App.css";
-import MovieCard from "./MovieCard";
+import MovieCard from './MovieCard';
 
 function App() {
   const API_URL =
